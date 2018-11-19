@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="N26ApiSuite" parallel="false">
+<test name= "APIPlayGroundTest">
+<classes>
+<class name = "rest.api.APIPlayground" />
+
+</classes>
+
+</test>
+</suite>
