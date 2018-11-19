@@ -5,6 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
+import java.util.Random;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -75,9 +77,24 @@ public class CreateRequest {
 	
 	public static RequestSpecification createCategoriesRequest()
 	{
+		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 12) 
+        
+        { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        System.out.println("Random id : " + saltStr);
+        
+//		Random random = new Random();
+//		String id = random.ints(11).toString();
+//		System.out.println("Random id : " + id);
 		RequestSpecification request = RestAssured.given();
 		 JSONObject requestParams = new JSONObject();
-		 requestParams.put("id", "pcmcat12345");
+		 requestParams.put("id", saltStr);
 		 requestParams.put("name", "New Category");
 		 
 		// Add a header stating the Request body is a JSON
