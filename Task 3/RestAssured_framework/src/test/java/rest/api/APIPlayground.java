@@ -11,7 +11,7 @@ public class APIPlayground {
 	// I have hard-coded the BaseUrin just to make it simple. Else we can pass it in
     //	Configuration properties file or in testng.xml or in data providers
 	
-	// Similarly we can have many ways to run the priorties the tests. I just choose the simple when by using TestNG priority annotation.
+	// Similarly we can have many ways to run the prioritize the tests. I just choose the simple when by using TestNG priority annotation.
 	@Test (priority=1)
 	public  static void createProduct()
 	{
