@@ -1,5 +1,5 @@
 # Vivek-Kumar
-N26 home assessment
+Sample API framework
 
 Task 1: Test Plan document -
 Test Plan is written in Excel file and has been committed under Task1 folder
